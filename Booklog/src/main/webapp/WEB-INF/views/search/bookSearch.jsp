@@ -46,10 +46,12 @@
         
        //.done, .fail 방식도 고려 . 비동기라서 순서 문제가 있음
       function searchFunction(){
+    	 
+    	 
         $.ajax({
             method: 'GET', // 요청방식
             url: 'bookSearch.do',
-            async : false,
+/*             async : false, */
             data: {keyword: $('.bookSearchInput').val()} ,
             dataType: "json",
             timeout: 1000,
@@ -62,10 +64,10 @@
                     let str = "";
 
                   if(data.total>=1){
-                           //리스트 동적 추가 
+                           //리스트 동적 추가 z
                            
-                           for(let i = (currentPage-1)*DATA_PER_PAGE+1; i <= currentPage*DATA_PER_PAGE; i++){
-                              data.items[i]
+                           for(let i = (currentPage-1)*DATA_PER_PAGE; i <= currentPage*DATA_PER_PAGE-1; i++){
+                        	  
                               str  = "<li class='suggestedBook'><a class='bookLink' href='";
                               str += "http://localhost:8181/search/postSearch?query="+data.items[i].isbn+"'>";
                               str += "<div class='bookImage'><img src='"+data.items[i].image+"'/></div>";
@@ -122,7 +124,7 @@
                addData(currentPage);   //초기데이터      
                observerLastChild(io);
 
-              }
+            }
             })
         }
       

@@ -114,7 +114,8 @@
 		</div>
 	</div>
 	   <script>
-        const url = `https://openapi.gg.go.kr/Poplitloanbook?Key=${key}&Type=xml&pIndex=2&pSize=31`;
+        /* const url = `https://openapi.gg.go.kr/Poplitloanbook?Key=${key}&Type=xml&pIndex=2&pSize=31`; */
+        const url = "https://openapi.gg.go.kr/Poplitloanbook?Key=${key}&Type=xml&pIndex=2&pSize=91";
 
         $.ajax({
             type: "GET",

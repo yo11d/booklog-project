@@ -60,7 +60,7 @@
         $.ajax({
             method: 'GET', // 요청방식
             url: 'postsBookSearch.do',
-            async : false,
+ /*            async : false, */
             data: {keyword: $('.bookSearchInput').val()} ,
             dataType: "json",
             timeout: 1000,
@@ -75,7 +75,7 @@
                   if(data.total>=1){
                            //리스트 동적 추가 
                            
-                           for(let i = (currentPage-1)*DATA_PER_PAGE+1; i <= currentPage*DATA_PER_PAGE; i++){
+                           for(let i = (currentPage-1)*DATA_PER_PAGE; i <= currentPage*DATA_PER_PAGE-1; i++){
                               data.items[i]
                               str  = "<li class='suggestedBook'><div class='bookLink' id='{ \"isbn\":\""+data.items[i].isbn+"\", \"booktitle\": \""+data.items[i].title+"\", \"bookauthor\":\""+data.items[i].author+"\", \"bookcover\":\""+data.items[i].image+"\" }' onclick='data(id);'>";
                               /* str += "http://localhost:8181/search/postSearch?query="+data.items[i].isbn+"'>"; */

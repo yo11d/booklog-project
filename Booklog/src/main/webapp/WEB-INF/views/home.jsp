@@ -180,7 +180,8 @@ transition: all 0.2s linear;
 
 <script type="text/javascript">
 document.cookie = "crossCookie=bar; SameSite=None; Secure"; //samesite 오류 때문에 붙여줌 
-const url = "https://openapi.gg.go.kr/Poplitloanbook?Key=${key}&Type=xml&pIndex=2&pSize=31";
+/* const url = "https://openapi.gg.go.kr/Poplitloanbook?Key=${key}&Type=xml&pIndex=2&pSize=31"; */
+const url = "https://openapi.gg.go.kr/Poplitloanbook?Key=${key}&Type=xml&pIndex=2&pSize=91";
 
 $.ajax({
     type: "GET",
